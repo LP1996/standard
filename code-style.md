@@ -438,7 +438,7 @@ let a = b = c = 10;
 
 ## **[强制]** **禁止使用 ==、!=，使用 ===、!==**
 
-## **[强制]** **基本类型检测使用 typeof，对象使用 instanceof，null、undefined使用 == null**
+## **[强制]** **基本类型检测使用 typeof，对象使用 instanceof，null、undefined使用 === 与自身判断**
 
 ## **[强制]** **三目运算符不允许嵌套**
 
@@ -612,7 +612,7 @@ required, readonly, disabled
 
 ## **[强制]** **规则声明顺序**
 ```
-布局类：display、float、position、left、top、right、bottom、overflow
+布局类：box-sizing, display、float、position、left、top、right、bottom、overflow
 
 盒模型类：width、height、margin、border、padding 等
 
@@ -623,11 +623,11 @@ required, readonly, disabled
 
 ## **[强制]** **颜色使用十六进制小写，能简写必须简写，不允许使用具名颜色**
 
-## **[建议]** **尽量不要使用属性简写，例如：font**
+## **[建议]** **font属性尽量不要使用属性简写**
 
 ## **[强制]** **scss 中选择器嵌套不能超过 5 层**
 
-## **[强制]** **当值为小于 1 的小数时，省略整数部分**
+## **[建议]** **当值为小于 1 的小数时，省略整数部分**
 ```css
 transition: 0.5s   =>   transition: .5s
 ```
@@ -639,9 +639,9 @@ transition: 0.5s   =>   transition: .5s
 
 ## **[强制]** **组件名必须使用大驼峰式命名，引入组件时也必须使用大驼峰式命名引入**
 
-## **[强制]** **模板中使用大驼峰式命名，当组件没有 slot 需要传入时，使用单闭合标签写法**
+## **[强制]** **单文件组件模板中使用中划线命名，当组件没有 slot 需要传入时，使用单闭合标签写法**
 ```html
-<MyComponent />
+<my-component />
 ```
 
 ## **[强制]** **除了根实例，组件的 data 选项必须是函数，并且返回一个对象**
@@ -690,7 +690,7 @@ prop: {
 
 ## **[强制]** **v-for 必须指定 key**
 
-## **[强制]** **v-for 与 v-if 不允许同时出现，使用计算属性过滤数据**
+## **[强烈建议]** **v-for 与 v-if 不允许同时出现，使用计算属性过滤数据 https://cn.vuejs.org/v2/style-guide/#%E9%81%BF%E5%85%8D-v-if-%E5%92%8C-v-for-%E7%94%A8%E5%9C%A8%E4%B8%80%E8%B5%B7-%E5%BF%85%E8%A6%81**
 
 ## **[强制]** **模板中，组件有多个特性或者绑定多个 prop、事件时，每个特性都需要换行**
 ```html
@@ -737,7 +737,7 @@ v-html、v-text
 
 ## **[强制]** **不允许在子组件中更改父组件的状态**
 
-## **[强制]** **尽量不要在组件方法中进行 DOM 操作**
+## **[强烈建议]** **尽量不要在组件方法中进行 DOM 操作**
 
 ## **[强制]** **目录结构**
 ```
